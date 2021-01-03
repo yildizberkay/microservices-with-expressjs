@@ -1,4 +1,4 @@
-COMPOSE_PROJECT := content-management
+COMPOSE_PROJECT := ticket-management
 DOCKER_NETWORK_NAME := n1
 export
 
