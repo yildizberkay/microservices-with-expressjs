@@ -1,0 +1,42 @@
+{
+  "name": "ticket-service",
+  "author": "Berkay Yildiz",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype"
+    ],
+    "env": [
+      "jest"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "babel src/ -d dist",
+    "server": "node dist/index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.0",
+    "supertest": "^6.0.1",
+    "jest": "^26.6.3",
+    "@babel/cli": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-flow": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "sequelize-cli": "^6.2.0",
+    "standard": "^16.0.3"
+  }
+}

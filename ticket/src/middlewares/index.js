@@ -1,0 +1,1 @@
+export { globalErrorHandler } from './globalErrorHandler'

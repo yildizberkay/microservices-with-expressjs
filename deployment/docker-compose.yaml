@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  db-service:
+    container_name: db
+    build:
+      context: ./db
+    restart: always
+    env_file:
+      - db/.env
+    networks:
+      - n1
+
+  gateway:
+    container_name: gateway
+    build:
+      context: ./gateway/src
+    restart: always
+    ports:
+      - 80:8080
+    networks:
+      - n1
+
+  service-auth:
+    container_name: service-auth
+    build:
+      context: ../auth
+    restart: always
+    env_file:
+      - service/auth/.env
+    networks:
+      - n1
+
+  service-ticket:
+    container_name: service-ticket
+    build:
+      context: ../ticket
+    restart: always
+    env_file:
+      - service/ticket/.env
+    networks:
+      - n1
+
+networks:
+  n1:
+    external: true
