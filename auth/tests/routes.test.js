@@ -75,25 +75,17 @@ describe('auth Endpoints', () => {
     test('register new user', async () => {
       const res = await supertest(app)
         .post('/register')
-        .send({
-          email: 'hello@world.com',
-          name: 'HelloWorld',
-          password: '1234'
-        })
+        .send(sampleUser)
 
       expect(res.statusCode).toEqual(201)
       expect(res.body).toHaveProperty('result')
     })
 
     test('should give error if user registered already', async () => {
-      await registerUser('HelloWorld', 'hello@world.com', '1234')
+      await registerUser(sampleUser.name, sampleUser.email, sampleUser.password)
       const res = await supertest(app)
         .post('/register')
-        .send({
-          email: 'hello@world.com',
-          name: 'HelloWorld',
-          password: '1234'
-        })
+        .send(sampleUser)
 
       expect(res.statusCode).toEqual(402)
       expect(res.body).toHaveProperty('result')

@@ -1,6 +1,6 @@
 import { initializeDatabase } from '../../src/db'
 import { User } from '../../src/db/models'
-import { getTokenFromEmailAndPassword, registerUser } from '../../src/services/authService'
+import { getTokenFromEmailAndPassword, registerUser } from '../../src/services'
 import { UserAlreadyExist, WrongLoginInfoException } from '../../src/exceptions'
 import { getSaltHashPassword } from '../../src/utils/crypto'
 import { sampleUser } from '../sampleData'
